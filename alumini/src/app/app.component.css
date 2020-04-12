@@ -1,0 +1,21 @@
+#images{
+    /* margin-right: 100px;
+    margin-left: 40px; */
+    border: 1px solid black;
+    width: 100px;
+    height: 110px;
+    /* display: flex;
+    flex: 33.33%; */
+}
+#images:hover{
+    transform: scale(1.1);
+}
+.data{
+    display: flex;
+}
+.details{
+margin-right: 400px;
+}
+.photo{
+   flex: 1 1 auto;
+}

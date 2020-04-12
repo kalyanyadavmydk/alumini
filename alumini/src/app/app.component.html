@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selected">
+          
+          <mat-option value="chennai">Chennai</mat-option>
+          <mat-option value="bangalore">Banglore</mat-option>
+          <mat-option value="hyderabad">Hyderabad</mat-option>
+        </mat-select>
+        
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Sort By</mat-label>
+        <mat-select [(value)]="sort">
+          <mat-option value="name">Name</mat-option>
+          <mat-option value="batch">Batch</mat-option>
+        </mat-select>
+        
+      </mat-form-field>
+
+      <button mat-button color="accent" (click)="onselect()">search</button>
+</mat-card><br>
+<div *ngIf="details.length>0">
+    <div *ngFor="let i of details">
+        <mat-card class="data" style="background-color: antiquewhite;">
+            <span class="details">
+                <h3>Name:{{i[0]}} {{i[1]}}  &nbsp; &nbsp;  Gender:{{i[6]}}</h3>
+                <h4>Rollnumber:{{i[3]}} Batch:{{i[10]}} Passed out:{{i[7]}} </h4>
+                <h4>Email:{{i[5]}}</h4>
+                <p> 
+                    Date of birth:{{i[4]|date:'dd-MM-yyyy'}} &nbsp; &nbsp;
+                    &nbsp; &nbsp;
+                     &nbsp; &nbsp;
+                    Institution: {{i[8]}} Branch:{{i[9]}} &nbsp; &nbsp; 
+                    Company:{{i[11]}}&nbsp; &nbsp;
+                </p>
+           </span>
+           <span class="fill-remaining-space"></span>
+            <span class="photo">
+                <img [src]="i[2]" id="images">
+            </span>
+        </mat-card><br>
+    </div>
+</div>
+
